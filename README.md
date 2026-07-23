@@ -64,7 +64,7 @@ The primary objective of this project is to build a **K-Nearest Neighbors (KNN)*
 
 ---
 
-##💡 Key Takeaways & Conclusion
+## 💡 Key Takeaways & Conclusion
 
 * The KNN model ($k=5$) achieved a **95.61% classification accuracy**.
 * Feature scaling via **`StandardScaler`** is critical for distance-based models like KNN; without normalization, high-magnitude features disproportionately dominate distance calculations.
