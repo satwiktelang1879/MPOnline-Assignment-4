@@ -83,3 +83,10 @@ cd breast-cancer-knn
 
 # Install required dependencies
 pip install pandas numpy matplotlib seaborn scikit-learn kaggle
+```
+
+---
+
+## Conclusion
+
+The KNN model (k=5) successfully classifies tumor samples with 95.61% accuracy. Feature scaling with StandardScaler is essential to prevent distance dominance by large-magnitude features. While highly effective for small diagnostic datasets, KNN's primary limitation is its high memory footprint and query latency when scaling to larger datasets.
