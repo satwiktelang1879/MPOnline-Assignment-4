@@ -64,14 +64,6 @@ The primary objective of this project is to build a **K-Nearest Neighbors (KNN)*
 
 ---
 
-## 💡 Key Takeaways & Conclusion
-
-* The KNN model ($k=5$) achieved a **95.61% classification accuracy**.
-* Feature scaling via **`StandardScaler`** is critical for distance-based models like KNN; without normalization, high-magnitude features disproportionately dominate distance calculations.
-* **Limitations:** While KNN is highly effective and non-parametric for smaller diagnostic datasets, its main trade-offs are higher memory usage during inference and slower query speeds as dataset size scales ($O(n \cdot d)$ complexity per prediction).
-
----
-
 ## 🚀 Quick Start
 
 ```bash
@@ -89,4 +81,6 @@ pip install pandas numpy matplotlib seaborn scikit-learn kaggle
 
 ## Conclusion
 
-The KNN model (k=5) successfully classifies tumor samples with 95.61% accuracy. Feature scaling with StandardScaler is essential to prevent distance dominance by large-magnitude features. While highly effective for small diagnostic datasets, KNN's primary limitation is its high memory footprint and query latency when scaling to larger datasets.
+* The KNN model ($k=5$) achieved a **95.61% classification accuracy**.
+* Feature scaling via **`StandardScaler`** is critical for distance-based models like KNN; without normalization, high-magnitude features disproportionately dominate distance calculations.
+* **Limitations:** While KNN is highly effective and non-parametric for smaller diagnostic datasets, its main trade-offs are higher memory usage during inference and slower query speeds as dataset size scales ($O(n \cdot d)$ complexity per prediction).
