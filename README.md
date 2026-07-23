@@ -1,114 +1,62 @@
-<div align="center">
+# 🎗️ Breast Cancer Classification using K-Nearest Neighbors (KNN)
 
-# 🩺 Breast Cancer Classification using K-Nearest Neighbors (KNN)
-
-### Machine Learning Classification Project
-
-
-**Breast Cancer Classification using the K-Nearest Neighbors (KNN) algorithm to predict whether a tumor is Malignant or Benign based on diagnostic measurements.**
-
-</div>
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-v1.0%2B-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-# 📌 Project Information
+## 📌 Author Details
 
-| Field | Details |
-|-------|---------|
-| **Author** | Akshat Garg |
-| **Registration Number** | 23BCE10641 |
-| **Application Number** | IN26011052 |
-| **Batch Number** | 1A |
-| **Email ID** | akshat.23bce10641@vitbhopal.ac.in |
+* **Author:** SATWIK TELANG
+* **Registration Number:** 23BAI11046
+* **Application Number:** IN26011013
+* **Batch Number:** 1A
+* **Email:** [satwik.23bai11046@vitbhopal.ac.in](mailto:satwik.23bai11046@vitbhopal.ac.in)
 
 ---
 
-# 🎯 Objective
+## 🎯 Objective
 
-The objective of this project is to develop a **K-Nearest Neighbors (KNN)** classification model (**k = 5**) capable of accurately classifying breast tumors as:
-
-- 🔴 **Malignant (M)**
-- 🟢 **Benign (B)**
-
-using diagnostic measurements from the Breast Cancer Wisconsin Diagnostic Dataset.
+The primary objective of this project is to build a **K-Nearest Neighbors (KNN)** classification model with $k=5$ to accurately classify breast tumors as **Malignant (M)** or **Benign (B)** based on diagnostic features extracted from digitized images of fine needle aspirates (FNA) of breast masses.
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset Information
 
-**Dataset Name**
-
-Breast Cancer Wisconsin Diagnostic Dataset
-
-**Source**
-
-https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data
+* **Dataset:** [Breast Cancer Wisconsin (Diagnostic) Data Set](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
+* **Target Variable:** `diagnosis`
+  * `M` (Malignant) $\rightarrow$ Encoded as `1`
+  * `B` (Benign) $\rightarrow$ Encoded as `0`
 
 ---
 
-# 🛠 Libraries Used
+## 🛠️ Tech Stack & Libraries
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- kaggle
+* **Data Handling & Processing:** `pandas`, `numpy`
+* **Data Visualization:** `matplotlib`, `seaborn`
+* **Machine Learning:** `scikit-learn`
+* **Dataset Management:** `kaggle`
 
 ---
 
-# ⚙️ Methodology
+## 🔬 Methodology
 
-## 📊 Data Understanding
-
-- Loaded and explored the dataset.
-- Identified numerical features and the target variable (`diagnosis`).
-- Examined feature distributions and data types.
-
----
-
-## 🧹 Data Preprocessing
-
-- Removed unnecessary columns:
-  - `id`
-  - `Unnamed: 32`
-- Encoded the target variable:
-  - Malignant (M) → **1**
-  - Benign (B) → **0**
-- Split the dataset into:
-  - **80% Training**
-  - **20% Testing**
-- Applied **StandardScaler** to normalize all features.
+1. **Data Understanding:** Explored feature distributions, data types, and verified target label balance.
+2. **Data Preprocessing:**
+   * Dropped non-informative columns (`id` and `Unnamed: 32`).
+   * Label-encoded target class (`M: 1`, `B: 0`).
+   * Performed **80/20 train-test split** with stratified sampling to preserve original class ratios.
+   * Standardized features using **`StandardScaler`** to eliminate feature scale dominance across Euclidean distance calculations.
+3. **Model Development:** Trained a `KNeighborsClassifier` with $k = 5$ on scaled training data.
+4. **Model Evaluation:** Analyzed performace using Confusion Matrix heatmaps, Accuracy, Precision, Recall, and F1-Score.
 
 ---
 
-## 🤖 Model Development
-
-A **K-Nearest Neighbors (KNN)** classifier was trained using:
-
-- **Algorithm:** KNeighborsClassifier
-- **Number of Neighbors (k):** 5
-
-The model predicts the diagnosis based on the majority class among the five nearest neighbors in the feature space.
-
----
-
-## 📈 Model Evaluation
-
-The trained model was evaluated using:
-
-- ✅ Accuracy
-- ✅ Precision
-- ✅ Recall
-- ✅ F1-Score
-- ✅ Confusion Matrix Heatmap
-
----
-
-# 📊 Results
+## 📊 Results & Performance
 
 | Metric | Score |
-|---------|-------|
+| :--- | :--- |
 | **Accuracy** | **95.61%** |
 | **Precision** | **97.44%** |
 | **Recall** | **90.48%** |
@@ -116,45 +64,22 @@ The trained model was evaluated using:
 
 ---
 
-# 📌 Conclusion
+##💡 Key Takeaways & Conclusion
 
-The **K-Nearest Neighbors (KNN)** classifier with **k = 5** successfully classified breast tumor samples with an impressive **95.61% accuracy**.
-
-Feature scaling using **StandardScaler** played a crucial role in ensuring that all diagnostic features contributed equally to the distance calculations.
-
-Although KNN performs exceptionally well on relatively small medical datasets, its primary limitation is increased memory usage and slower prediction time as the dataset size grows.
+* The KNN model ($k=5$) achieved a **95.61% classification accuracy**.
+* Feature scaling via **`StandardScaler`** is critical for distance-based models like KNN; without normalization, high-magnitude features disproportionately dominate distance calculations.
+* **Limitations:** While KNN is highly effective and non-parametric for smaller diagnostic datasets, its main trade-offs are higher memory usage during inference and slower query speeds as dataset size scales ($O(n \cdot d)$ complexity per prediction).
 
 ---
 
-# 🚀 Technologies Used
+## 🚀 Quick Start
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-Learn
-- Jupyter Notebook
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/breast-cancer-knn.git](https://github.com/your-username/breast-cancer-knn.git)
 
----
+# Navigate to project folder
+cd breast-cancer-knn
 
-# 📁 Project Structure
-
-```
-Breast-Cancer-KNN/
-│
-├── Breast_Cancer_Classification.ipynb
-├── data.csv
-├── README.md
-└── requirements.txt
-```
-
----
-
-<div align="center">
-
-### ⭐ If you found this project helpful, consider giving it a star!
-
-Made with ❤️ using Python & Scikit-Learn
-
-</div>
+# Install required dependencies
+pip install pandas numpy matplotlib seaborn scikit-learn kaggle
